@@ -1,0 +1,81 @@
+{
+    "site_name": "广州极客艾特计算机系统有限公司",
+    "hero_title": "极客艾特 Geek@",
+    "hero_subtitle": "企业信息化解决方案专家",
+    "description": "我们为客户提供一站式 IT 服务，包括服务器运维、项目开发、备案咨询、安全防护等。",
+    "carousel_title": "我们的服务场景",
+    "carousel": [
+      "carousel-1.jpg",
+      "carousel-2.jpg",
+      "carousel-3.jpg"
+    ],
+    "about_title": "关于我们",
+    "about_subtitle": "专业团队，值得信赖",
+    "about_us": "成立于2025年，我们是一家专注于企业信息化解决方案的科技公司。凭借专业的技术团队和丰富的行业经验，我们已成功服务全国200+企业客户，涵盖金融、教育、制造、互联网等多个行业。",
+    "about_features": [
+      {
+        "icon": "bi-award-fill",
+        "title": "专业认证",
+        "description": "获得多项行业认证，技术实力得到权威认可"
+      },
+      {
+        "icon": "bi-people-fill", 
+        "title": "团队经验",
+        "description": "平均8年以上行业经验，技术专家团队"
+      },
+      {
+        "icon": "bi-shield-lock-fill",
+        "title": "安全可靠",
+        "description": "严格的安全标准，保障客户数据安全"
+      }
+    ],
+    "services_title": "核心服务",
+    "services_subtitle": "为您提供全方位的技术解决方案",
+    "services": [
+      {
+        "name": "服务器运维",
+        "icon": "bi-server",
+        "description": "7×24小时专业运维服务，确保系统稳定运行"
+      },
+      {
+        "name": "系统监控", 
+        "icon": "bi-graph-up",
+        "description": "实时监控系统性能，提前预警潜在问题"
+      },
+      {
+        "name": "安全加固",
+        "icon": "bi-shield-lock-fill",
+        "description": "全方位安全防护，抵御各类网络威胁"
+      },
+      {
+        "name": "ICP备案",
+        "icon": "bi-file-earmark-check-fill",
+        "description": "专业备案服务，快速通过审核"
+      },
+      {
+        "name": "项目开发",
+        "icon": "bi-code-slash",
+        "description": "定制化软件开发，满足企业个性化需求"
+      },
+      {
+        "name": "技术咨询",
+        "icon": "bi-chat-dots-fill",
+        "description": "专业技术咨询，助力企业数字化转型"
+      }
+    ],
+    "contact_title": "联系我们",
+    "contact_subtitle": "随时为您提供专业服务",
+    "contact": {
+      "address": "广州市小蛮腰科技园G栋101室",
+      "phone": "020-12345678",
+      "email": "contact@geekat.cn",
+      "work_time": "周一至周五 9:00-18:00",
+      "icp": "粤ICP备20250000号",
+      "police": "粤公网安备110105000000号"
+    },
+    "footer": {
+      "copyright": "© 2024 广州极客艾特计算机系统有限公司. 保留所有权利。",
+      "description": "专注于企业信息化解决方案，助力企业数字化转型"
+    }
+  }
+  
