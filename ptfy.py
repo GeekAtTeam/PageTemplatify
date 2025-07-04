@@ -10,6 +10,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import threading
 import time
+import shutil
 
 def build(args):
     # 获取脚本所在目录，确保路径正确
@@ -47,6 +48,21 @@ def build(args):
 
     dist_dir = os.path.join(root_dir, 'dist')
     os.makedirs(dist_dir, exist_ok=True)
+
+    # 复制 public 目录到 dist 目录
+    public_dir = os.path.join(root_dir, 'public')
+    if os.path.isdir(public_dir):
+        # 直接复制 public 目录下的文件到 dist 目录
+        for item in os.listdir(public_dir):
+            src = os.path.join(public_dir, item)
+            dst = os.path.join(dist_dir, item)
+            if os.path.isfile(src):
+                shutil.copy2(src, dst)
+            elif os.path.isdir(src):
+                if os.path.exists(dst):
+                    shutil.rmtree(dst)
+                shutil.copytree(src, dst)
+        print(f"✅ 已复制 public 资源到: {dist_dir}")
 
     output_path = os.path.join(dist_dir, f"index.html")
 
@@ -98,19 +114,30 @@ def preview(args):
     print(f"🔄 已开启热更新，监听: {config_path} 和 {theme_dir}")
     # 启动 HTTP 服务
     port = args.port
+    
+    # 切换到 dist 目录
+    original_cwd = os.getcwd()
     os.chdir(dist_dir)
-    handler = http.server.SimpleHTTPRequestHandler
-    with socketserver.TCPServer(("", port), handler) as httpd:
+    
+    # 创建服务器时启用端口重用
+    socketserver.TCPServer.allow_reuse_address = True
+    
+    with socketserver.TCPServer(("", port), http.server.SimpleHTTPRequestHandler) as httpd:
         print(f"🌐 本地预览服务已启动: http://localhost:{port}")
         print("按 Ctrl+C 停止服务。")
         try:
             while True:
                 httpd.handle_request()
         except KeyboardInterrupt:
-            print("\n服务已停止。")
+            print("\n正在停止服务...")
         finally:
+            # 确保正确关闭服务器和观察者
+            httpd.server_close()
             observer.stop()
             observer.join()
+            # 恢复原始工作目录
+            os.chdir(original_cwd)
+            print("服务已停止，端口已释放。")
 
 def main():
     parser = argparse.ArgumentParser(description="PageTemplatify (ptfy) - 静态 HTML 页面生成器")
