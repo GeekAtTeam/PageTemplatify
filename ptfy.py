@@ -158,6 +158,27 @@ def preview(args):
             os.chdir(original_cwd)
             print("服务已停止，端口已释放。")
 
+def list_themes(args):
+    """列出当前支持的主题"""
+    themes = [
+        ("enterprise", "企业官网"),
+        ("saas", "SaaS 平台"), 
+        ("ecommerce", "电商平台"),
+        ("blog", "个人博客"),
+        ("news", "新闻网站")
+    ]
+    
+    print("Available themes:")
+    print()
+    
+    for name, title in themes:
+        print(f"  {name:<12} {title}")
+    
+    print()
+    print("Examples:")
+    print("  python ptfy.py build --theme enterprise")
+    print("  python ptfy.py preview --theme saas")
+
 def main():
     parser = argparse.ArgumentParser(description="PageTemplatify (ptfy) - 静态 HTML 页面生成器")
     subparsers = parser.add_subparsers(dest='command', required=True)
@@ -179,10 +200,18 @@ def main():
     parser_preview.add_argument('--port', '-p', type=int, default=9469, help='预览服务端口，默认 9469')
     parser_preview.set_defaults(func=preview)
 
+    # list 子命令
+    parser_list = subparsers.add_parser('list', help='列出当前支持的主题')
+    parser_list.set_defaults(func=list_themes)
+
     args = parser.parse_args()
     
+    # 只有 build 和 preview 命令需要 config 属性
+    if hasattr(args, 'theme') and not hasattr(args, 'config'):
+        args.config = None
+    
     # 如果没有指定 config，使用与 theme 同名的配置文件
-    if not args.config:
+    if hasattr(args, 'config') and not args.config and hasattr(args, 'theme'):
         args.config = f"configs/{args.theme}.json"
     
     args.func(args)
