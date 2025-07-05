@@ -121,269 +121,127 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="logo.svg" alt="Logo" class="d-inline-block align-text-top">
+        <img src="logo.svg" alt="Logo" class="d-inline-block align-text-top" style="height:32px; margin-right:8px;">
         {{ site_name }}
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#home">首页</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">关于我们</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#services">服务内容</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">联系我们</a>
-          </li>
-        </ul>
+      <div class="d-flex ms-auto align-items-center gap-2">
+        <form class="d-none d-lg-flex me-2" role="search">
+          <input class="form-control form-control-sm" type="search" placeholder="搜索" aria-label="搜索" style="width:140px;">
+        </form>
+        <a href="#" class="btn btn-outline-light btn-sm">登录</a>
+        <a href="#" class="btn btn-primary btn-sm">注册</a>
       </div>
     </div>
   </nav>
 
-  <!-- 主要内容区域 -->
-  <main>
-    <!-- 英雄区域 -->
-    <section id="home" class="hero-section">
-      <div class="container text-center">
-        <h1 class="display-3 fw-bold mb-5">{{ hero_title }}</h1>
-        <h2 class="display-6 mb-5">{{ hero_subtitle }}</h2>
-        <p class="fs-5">{{ description }}</p>
-      </div>
-    </section>
-
-    <!-- 轮播图 -->
-    {% if carousel %}
-    <section class="py-5">
-      <div class="container">
-        {% if carousel_title %}
-        <div class="text-center mb-4">
-          <h2 class="display-5 fw-bold">{{ carousel_title }}</h2>
+  <!-- 轮播图 -->
+  {% if carousel %}
+  <section class="pt-5 pb-4 bg-light">
+    <div class="container">
+      <div class="mb-4" style="height:32px;"></div>
+      <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          {% for img in carousel %}
+          <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="{{ loop.index0 }}" {% if loop.first %}class="active"{% endif %}></button>
+          {% endfor %}
         </div>
-        {% endif %}
-        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            {% for img in carousel %}
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="{{ loop.index0 }}" 
-                    {% if loop.first %}class="active"{% endif %}></button>
-            {% endfor %}
-          </div>
-          <div class="carousel-inner">
-            {% for img in carousel %}
-            <div class="carousel-item {% if loop.first %}active{% endif %}">
-              <img src="{{ img }}" class="d-block w-100" alt="Banner {{ loop.index }}">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>专业服务场景 {{ loop.index }}</h5>
-                <p>为您提供最优质的技术解决方案</p>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-        </div>
-      </div>
-    </section>
-    {% endif %}
-
-    <!-- 关于我们 -->
-    <section id="about" class="section-padding bg-light-gray">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center mb-5">
-            <h2 class="display-5 fw-bold">{{ about_title or '关于我们' }}</h2>
-            {% if about_subtitle %}
-            <p class="lead text-muted">{{ about_subtitle }}</p>
-            {% endif %}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center mb-5">
-            <p class="lead">{{ about_us }}</p>
-          </div>
-        </div>
-        {% if about_features %}
-        <div class="row g-4">
-          {% for feature in about_features %}
-          <div class="col-md-4">
-            <div class="feature-card">
-              <div class="feature-icon">
-                <i class="bi {{ feature.icon }}"></i>
-              </div>
-              <h5 class="fw-bold mb-3">{{ feature.title }}</h5>
-              <p class="text-muted">{{ feature.description }}</p>
+        <div class="carousel-inner rounded-4 shadow-sm">
+          {% for img in carousel %}
+          <div class="carousel-item {% if loop.first %}active{% endif %} position-relative">
+            <img src="{{ img }}" class="d-block w-100" alt="Banner {{ loop.index }}">
+            <div class="carousel-caption d-block w-100" style="bottom: 8%; left: 50%; transform: translateX(-50%); background:rgba(34,34,34,0.65); border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:24px 32px; max-width:600px;">
+              <h5 class="text-white mb-2 text-center" style="font-size:1.5rem;">{{ carousel_news[loop.index0].title }}</h5>
+              <p class="text-light small mb-0 text-center">{{ carousel_news[loop.index0].summary }}</p>
             </div>
           </div>
           {% endfor %}
         </div>
-        {% endif %}
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
-    </section>
+    </div>
+  </section>
+  {% endif %}
 
-    <!-- 服务内容 -->
-    <section id="services" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center mb-5">
-            <h2 class="display-5 fw-bold">{{ services_title or '核心服务' }}</h2>
-            {% if services_subtitle %}
-            <p class="lead text-muted">{{ services_subtitle }}</p>
-            {% endif %}
-          </div>
-        </div>
-        <div class="row g-4">
-          {% for service in services %}
-          <div class="col-md-6 col-lg-4">
-            <div class="card service-card h-100">
-              <div class="card-body text-center">
-                <div class="mb-3">
-                  <i class="bi {{ service.icon }} text-primary" style="font-size: 2rem;"></i>
-                </div>
-                <h5 class="card-title">{{ service.name }}</h5>
-                <p class="card-text text-muted">{{ service.description }}</p>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <!-- 联系我们 -->
-    <section id="contact" class="section-padding bg-light-gray">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center mb-5">
-            <h2 class="display-5 fw-bold">{{ contact_title or '联系我们' }}</h2>
-            {% if contact_subtitle %}
-            <p class="lead text-muted">{{ contact_subtitle }}</p>
-            {% endif %}
-          </div>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-3">
-            <div class="card border-0 shadow-sm">
-              <div class="card-body text-center">
-                <h5 class="card-title"><i class="bi bi-geo-alt-fill text-primary me-2"></i>公司地址</h5>
-                <p class="card-text">{{ contact.address }}</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="card border-0 shadow-sm">
-              <div class="card-body text-center">
-                <h5 class="card-title"><i class="bi bi-telephone-fill text-primary me-2"></i>联系电话</h5>
-                <p class="card-text">{{ contact.phone }}</p>
-              </div>
-            </div>
-          </div>
-          {% if contact.email %}
-          <div class="col-md-6 col-lg-3">
-            <div class="card border-0 shadow-sm">
-              <div class="card-body text-center">
-                <h5 class="card-title"><i class="bi bi-envelope-fill text-primary me-2"></i>邮箱地址</h5>
-                <p class="card-text">{{ contact.email }}</p>
-              </div>
-            </div>
-          </div>
-          {% endif %}
-          {% if contact.work_time %}
-          <div class="col-md-6 col-lg-3">
-            <div class="card border-0 shadow-sm">
-              <div class="card-body text-center">
-                <h5 class="card-title"><i class="bi bi-clock-fill text-primary me-2"></i>工作时间</h5>
-                <p class="card-text">{{ contact.work_time }}</p>
-              </div>
-            </div>
-          </div>
-          {% endif %}
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- 页脚 -->
-  <footer class="footer">
+  <!-- 主体两栏布局 -->
+  <section class="py-5">
     <div class="container">
       <div class="row g-4">
-        <!-- 公司信息 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="footer-section">
-            <h5 class="mb-3">
-              <img src="logo.svg" alt="Logo" style="height: 24px; margin-right: 8px;">
-              {{ hero_title }}
-            </h5>
-            <p class="mb-3">{{ footer.description if footer else slogan }}</p>
-            <div class="social-links">
-              <a href="#" class="text-light me-3"><i class="bi bi-envelope-fill"></i></a>
-              <a href="#" class="text-light me-3"><i class="bi bi-telephone-fill"></i></a>
-              <a href="#" class="text-light"><i class="bi bi-geo-alt-fill"></i></a>
+        <!-- 左栏：主要新闻 -->
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body pb-0">
+              <ul class="nav nav-tabs mb-3" id="newsTab" role="tablist">
+                {% for tab in news_tabs %}
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link {% if loop.first %}active{% endif %}" id="tab-{{ tab.id }}" data-bs-toggle="tab" data-bs-target="#tab-pane-{{ tab.id }}" type="button" role="tab">{{ tab.title }}</button>
+                </li>
+                {% endfor %}
+              </ul>
+              <div class="tab-content" id="newsTabContent">
+                {% for tab in news_tabs %}
+                <div class="tab-pane fade {% if loop.first %}show active{% endif %}" id="tab-pane-{{ tab.id }}" role="tabpanel">
+                  <ul class="list-group list-group-flush">
+                    {% for news in tab.news_list %}
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">{{ tab.title }}</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">{{ news.title }}</a>
+                          <div class="small text-muted mt-1">{{ news.summary }}</div>
+                        </div>
+                        <span class="text-muted small ms-3">{{ news.time }}</span>
+                      </div>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endfor %}
+              </div>
             </div>
           </div>
         </div>
-        
-        <!-- 联系信息 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="footer-section">
-            <h6 class="mb-3">联系方式</h6>
-            <div class="contact-info">
-              <div class="d-flex align-items-center mb-2">
-                <i class="bi bi-geo-alt-fill me-2"></i>
-                <small>{{ contact.address }}</small>
-              </div>
-              <div class="d-flex align-items-center mb-2">
-                <i class="bi bi-telephone-fill me-2"></i>
-                <small>{{ contact.phone }}</small>
-              </div>
-              {% if contact.email %}
-              <div class="d-flex align-items-center mb-2">
-                <i class="bi bi-envelope-fill me-2"></i>
-                <small>{{ contact.email }}</small>
-              </div>
-              {% endif %}
-              {% if contact.work_time %}
-              <div class="d-flex align-items-center mb-2">
-                <i class="bi bi-clock-fill me-2"></i>
-                <small>{{ contact.work_time }}</small>
-              </div>
-              {% endif %}
-            </div>
-          </div>
-        </div>
-        
-        <!-- 备案信息 -->
-        <div class="col-lg-4 col-md-12">
-          <div class="footer-section">
-            <h6 class="mb-3">备案信息</h6>
-            <div class="icp-info">
-              <div class="mb-2">
-                <small>ICP备案号：{{ contact.icp }}</small>
-              </div>
-              <div class="mb-2">
-                <small>公安备案号：{{ contact.police }}</small>
-              </div>
+        <!-- 右栏：用户讨论 -->
+        <div class="col-lg-4">
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-header bg-white fw-bold">用户讨论</div>
+            <div class="card-body p-0">
+              <ul class="list-group list-group-flush">
+                {% for post in user_posts %}
+                <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                  <div class="d-flex align-items-start">
+                    <img src="{{ post.avatar }}" alt="avatar" class="rounded-circle me-3" style="width:36px;height:36px;object-fit:cover;">
+                    <div>
+                      <div class="fw-bold">{{ post.username }}</div>
+                      <div class="small text-muted mb-1">{{ post.time }}</div>
+                      <div>{{ post.content }}</div>
+                    </div>
+                  </div>
+                </li>
+                {% endfor %}
+              </ul>
             </div>
           </div>
         </div>
       </div>
-      
-      <!-- 分隔线 -->
-      <hr class="my-4 border-secondary">
-      
-      <!-- 版权信息 -->
-      <div class="row">
-        <div class="col-12 text-center">
-          <small class="text-muted">{{ footer.copyright if footer else '© 2024 ' + site_name + '. 保留所有权利。' }}</small>
-        </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer bg-dark text-light py-4 mt-5">
+    <div class="container text-center">
+      <div class="mb-2">
+        <img src="logo.svg" alt="Logo" style="height:24px;vertical-align:middle;"> {{ site_name }}
+      </div>
+      <div class="small">{{ footer.description }}</div>
+      <div class="small text-muted mt-2">{{ footer.copyright }}</div>
+      <div class="small text-muted mt-2">
+        <span>ICP备案号：{{ contact.icp }}</span>
+        <span class="ms-3">公安备案号：{{ contact.police }}</span>
       </div>
     </div>
   </footer>
