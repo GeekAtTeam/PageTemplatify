@@ -3,11 +3,94 @@
     "hero_title": "技术探索者",
     "hero_subtitle": "分享技术，记录生活",
     "description": "一个专注于技术分享、学习笔记和个人感悟的博客平台。记录技术成长，分享生活点滴。",
+    "author": "阿基米东",
+    "author_bio": "全栈开发工程师，热爱开源，专注于前端技术和人工智能应用。",
+    "avatar": "avatar.jpg",
+    "social_links": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/luhuadong",
+        "icon": "bi-github"
+      },
+      {
+        "name": "Twitter", 
+        "url": "https://twitter.com/luhuadong",
+        "icon": "bi-twitter"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/luhuadong", 
+        "icon": "bi-linkedin"
+      },
+      {
+        "name": "Email",
+        "url": "mailto:luhuadong@163.com",
+        "icon": "bi-envelope"
+      }
+    ],
+    "categories": [
+      {
+        "name": "前端开发",
+        "count": 15,
+        "icon": "bi-window"
+      },
+      {
+        "name": "后端架构",
+        "count": 12,
+        "icon": "bi-server"
+      },
+      {
+        "name": "人工智能",
+        "count": 8,
+        "icon": "bi-cpu"
+      },
+      {
+        "name": "DevOps",
+        "count": 6,
+        "icon": "bi-gear"
+      },
+      {
+        "name": "开源项目",
+        "count": 10,
+        "icon": "bi-github"
+      },
+      {
+        "name": "技术随笔",
+        "count": 20,
+        "icon": "bi-pencil"
+      }
+    ],
+    "recent_posts": [
+      {
+        "title": "Vue 3 Composition API 最佳实践",
+        "excerpt": "深入探讨 Vue 3 Composition API 的使用技巧和最佳实践，帮助你写出更优雅的代码。",
+        "date": "2025-01-15",
+        "category": "前端开发",
+        "read_time": "8 分钟",
+        "url": "#"
+      },
+      {
+        "title": "Docker 容器化部署指南",
+        "excerpt": "从零开始学习 Docker 容器化技术，包括基础概念、镜像构建和部署流程。",
+        "date": "2025-01-10",
+        "category": "DevOps",
+        "read_time": "12 分钟",
+        "url": "#"
+      },
+      {
+        "title": "机器学习入门：从理论到实践",
+        "excerpt": "机器学习基础知识介绍，结合实际项目案例，带你快速入门 AI 领域。",
+        "date": "2025-01-05",
+        "category": "人工智能",
+        "read_time": "15 分钟",
+        "url": "#"
+      }
+    ],
     "carousel_title": "精选文章",
     "carousel": [
-      "carousel-1.webp",
-      "carousel-2.webp",
-      "carousel-3.webp"
+      "carousel-1.jpg",
+      "carousel-2.jpg",
+      "carousel-3.jpg"
     ],
     "about_title": "关于我",
     "about_subtitle": "热爱技术的程序员",
@@ -68,13 +151,13 @@
     "contact": {
       "address": "中国",
       "phone": "",
-      "email": "contact@techblog.com",
+      "email": "luhuadong@163.com",
       "work_time": "工作日回复",
-      "icp": "京ICP备20250000号",
-      "police": "京公网安备110105000000号"
+      "icp": "粤ICP备20250000号",
+      "police": "粤公网安备110105000000号"
     },
     "footer": {
-      "copyright": "© 2024 技术探索者. 保留所有权利。",
+      "copyright": "© 2025 技术探索者. 保留所有权利。",
       "description": "分享技术，记录生活"
     }
   }
