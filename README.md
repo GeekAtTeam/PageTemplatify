@@ -186,17 +186,17 @@ python ptfy.py build --theme enterprise
 python ptfy.py build --theme enterprise
 
 # 上传到服务器
-scp enterprise-enterprise.zip user@server:/var/www/html/
+scp pagetemplatify-enterprise.zip user@server:/var/www/html/
 
 # 在服务器上解压
-ssh user@server "cd /var/www/html && unzip enterprise-enterprise.zip"
+ssh user@server "cd /var/www/html && unzip pagetemplatify-enterprise.zip"
 ```
 
 
 
 ## 📄 许可证
 
-本项目采用 MIT 许可证，详见 LICENSE 文件。
+本项目采用 MIT 许可证，详见 [LICENSE](LICENSE) 文件。
 
 
 
