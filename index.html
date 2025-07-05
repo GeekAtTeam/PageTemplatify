@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>好句子API</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 120px 0 100px;
+    }
+    .service-card {
+      transition: transform 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    .carousel-item img {
+      height: 400px;
+      object-fit: cover;
+    }
+    .footer {
+      background-color: #343a40;
+      color: white;
+      padding: 40px 0 20px;
+    }
+    .footer h5 {
+      color: #ffffff;
+      font-weight: bold;
+    }
+    .footer p, .footer small {
+      color: #e9ecef;
+    }
+    .footer .text-muted {
+      color: #adb5bd !important;
+    }
+    .hero-badge {
+      font-size: 1.1rem;
+      padding: 0.7em 1.4em;
+      margin-right: 0.5em;
+      border-radius: 1.5em;
+      letter-spacing: 0.02em;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border: 2px solid #fff;
+      display: inline-block;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand img {
+      height: 32px;
+      margin-right: 10px;
+    }
+    .section-padding {
+      padding: 80px 0;
+    }
+    .bg-light-gray {
+      background-color: #f8f9fa;
+    }
+    .feature-card {
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+    }
+    .feature-icon {
+      font-size: 3rem;
+      color: #667eea;
+      margin-bottom: 20px;
+    }
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .footer-section {
+      padding: 0 15px;
+    }
+    .footer-section h6 {
+      color: #ffffff;
+      font-weight: 600;
+      border-bottom: 2px solid #495057;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+    .contact-info .d-flex {
+      transition: transform 0.2s ease;
+    }
+    .contact-info .d-flex:hover {
+      transform: translateX(5px);
+    }
+    .social-links a {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      background-color: #495057;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    .social-links a:hover {
+      background-color: #6c757d;
+      transform: translateY(-2px);
+    }
+    .icp-info small {
+      color: #adb5bd;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <img src="logo.svg" alt="Logo" style="height:32px;vertical-align:middle;margin-right:8px;">好句子API
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center gap-2">
+          <li class="nav-item"><a class="nav-link" href="#home">首页</a></li>
+          <li class="nav-item"><a class="nav-link" href="#price">价格</a></li>
+          <li class="nav-item"><a class="nav-link" href="#docs">文档</a></li>
+          <li class="nav-item"><a class="btn btn-outline-primary btn-sm" href="#">登录</a></li>
+          <li class="nav-item"><a class="btn btn-primary btn-sm" href="#">注册</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero 英雄区 -->
+  <section id="home" class="py-5 bg-light" style="margin-top:64px;">
+    <div class="container text-center py-5">
+      <h1 class="display-4 fw-bold mb-3">好句子API</h1>
+      <h2 class="h4 mb-3 text-secondary">优质句子API服务，助力内容创作与产品创新</h2>
+      <p class="lead mb-4">收集优质句子，助力内容创作，提供高可用API服务，轻松集成到你的应用、网站、公众号和小程序。</p>
+      <div class="mb-4">
+        
+        <span class="badge hero-badge" style="background: #FF9800;">高可用</span>
+        
+        <span class="badge hero-badge" style="background: #FF4081;">丰富句库</span>
+        
+        <span class="badge hero-badge" style="background: #228B22;">免费试用</span>
+        
+      </div>
+      <a href="#docs" class="btn btn-primary btn-lg px-5">立即接入</a>
+    </div>
+  </section>
+
+  <!-- 主要功能/特性 -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">平台特性</h2>
+      <div class="row g-4">
+        
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm text-center p-4">
+            <div class="mb-3" style="font-size:2.5rem;color:#6366f1;"><i class="bi bi-cloud-check"></i></div>
+            <h5 class="fw-bold mb-2">高可用API</h5>
+            <p class="text-muted mb-0">7×24小时稳定服务，毫秒级响应，支持高并发调用。</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm text-center p-4">
+            <div class="mb-3" style="font-size:2.5rem;color:#6366f1;"><i class="bi bi-bookmarks"></i></div>
+            <h5 class="fw-bold mb-2">丰富句库</h5>
+            <p class="text-muted mb-0">收录10万+优质句子，涵盖情感、励志、哲理、文学等多领域。</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm text-center p-4">
+            <div class="mb-3" style="font-size:2.5rem;color:#6366f1;"><i class="bi bi-plug"></i></div>
+            <h5 class="fw-bold mb-2">易集成</h5>
+            <p class="text-muted mb-0">RESTful接口设计，支持主流编程语言和平台。</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm text-center p-4">
+            <div class="mb-3" style="font-size:2.5rem;color:#6366f1;"><i class="bi bi-gift"></i></div>
+            <h5 class="fw-bold mb-2">免费试用</h5>
+            <p class="text-muted mb-0">注册即送免费额度，零门槛体验API服务。</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm text-center p-4">
+            <div class="mb-3" style="font-size:2.5rem;color:#6366f1;"><i class="bi bi-shield-lock"></i></div>
+            <h5 class="fw-bold mb-2">数据安全</h5>
+            <p class="text-muted mb-0">HTTPS加密传输，保障数据隐私与安全。</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm text-center p-4">
+            <div class="mb-3" style="font-size:2.5rem;color:#6366f1;"><i class="bi bi-image"></i></div>
+            <h5 class="fw-bold mb-2">支持AI图片生成</h5>
+            <p class="text-muted mb-0">API支持AI图片生成，丰富内容创作场景。</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- 价格区块 -->
+  <section id="price" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">价格套餐</h2>
+      <div class="row g-4 justify-content-center">
+        
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 border-0 shadow d-flex flex-column text-center">
+            <div class="card-body d-flex flex-column">
+              <h5 class="fw-bold mb-3">基础版</h5>
+              <div class="display-6 fw-bold mb-2">¥0/月</div>
+              <div class="mb-3 text-muted">适合个人和开发者体验</div>
+              <ul class="list-unstyled mb-4 text-start flex-grow-1 ps-2">
+                
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>每日100次调用</li>
+                
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>基础句库</li>
+                
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>社区支持</li>
+                
+              </ul>
+              <div class="mt-auto">
+                <a href="#" class="btn btn-primary w-100">选择套餐</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 border-0 shadow d-flex flex-column text-center">
+            <div class="card-body d-flex flex-column">
+              <h5 class="fw-bold mb-3">专业版</h5>
+              <div class="display-6 fw-bold mb-2">¥29/月</div>
+              <div class="mb-3 text-muted">适合小型项目和团队</div>
+              <ul class="list-unstyled mb-4 text-start flex-grow-1 ps-2">
+                
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>每日10,000次调用</li>
+                
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>全部句库</li>
+                
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>优先技术支持</li>
+                
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>自定义标签筛选</li>
+                
+              </ul>
+              <div class="mt-auto">
+                <a href="#" class="btn btn-primary w-100">选择套餐</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 border-0 shadow d-flex flex-column text-center">
+            <div class="card-body d-flex flex-column">
+              <h5 class="fw-bold mb-3">企业版</h5>
+              <div class="display-6 fw-bold mb-2">¥99/月</div>
+              <div class="mb-3 text-muted">适合企业级应用和大流量场景</div>
+              <ul class="list-unstyled mb-4 text-start flex-grow-1 ps-2">
+                
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>每日100,000次调用</li>
+                
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>全部句库</li>
+                
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>专属客服</li>
+                
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>SLA服务保障</li>
+                
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>高级数据分析</li>
+                
+              </ul>
+              <div class="mt-auto">
+                <a href="#" class="btn btn-primary w-100">选择套餐</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- 使用方法/文档入口 -->
+  <section id="docs" class="py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">如何使用</h2>
+      <p class="lead mb-4">只需三步，轻松集成好句子API到你的项目：</p>
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-8">
+          <ol class="list-group list-group-numbered">
+            
+            <li class="list-group-item">注册账号，获取API密钥</li>
+            
+            <li class="list-group-item">阅读文档，选择合适的接口</li>
+            
+            <li class="list-group-item">调用API，获取优质句子内容</li>
+            
+          </ol>
+        </div>
+      </div>
+      <a href="#" class="btn btn-outline-primary btn-lg">查看开发文档</a>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer bg-dark text-light py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center text-md-start mb-3">
+          <div class="mb-2">
+            <img src="logo.svg" alt="Logo" style="height:24px;vertical-align:middle;"> 好句子API
+          </div>
+          <div class="small">高可用句子API服务，助力内容创作与产品创新</div>
+        </div>
+        <div class="col-md-4 text-center mb-3">
+          <h6 class="text-white mb-3">联系方式</h6>
+          <div class="small d-flex flex-column align-items-center">
+            <div class="mb-1 d-flex align-items-center" style="width: 200px;">
+              <i class="bi bi-geo-alt me-2" style="width: 16px; text-align: center;"></i>深圳市南山区科技园
+            </div>
+            <div class="mb-1 d-flex align-items-center" style="width: 200px;">
+              <i class="bi bi-telephone me-2" style="width: 16px; text-align: center;"></i>0755-12345678
+            </div>
+            <div class="mb-1 d-flex align-items-center" style="width: 200px;">
+              <i class="bi bi-envelope me-2" style="width: 16px; text-align: center;"></i>hello@quotable.cn
+            </div>
+            <div class="mb-1 d-flex align-items-center" style="width: 200px;">
+              <i class="bi bi-clock me-2" style="width: 16px; text-align: center;"></i>7×24小时在线服务
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-center text-md-end mb-3">
+          <h6 class="text-white mb-3">备案信息</h6>
+          <div class="small">
+            <div class="mb-1">粤ICP备20250000号</div>
+            <div class="mb-1">粤公网安备110105000000号</div>
+          </div>
+        </div>
+      </div>
+      <hr class="my-3" style="border-color: #495057;">
+      <div class="text-center">
+        <div class="small text-muted">© 2025 好句子API 保留所有权利。</div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
