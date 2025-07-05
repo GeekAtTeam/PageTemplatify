@@ -30,6 +30,13 @@ pip install -r requirements.txt
 
 ## 🚀 快速使用
 
+### 查看支持的主题
+
+列出所有可用的主题：
+```bash
+python ptfy.py list
+```
+
 ### 基础用法
 
 生成页面（使用默认配置）：
