@@ -1,81 +1,172 @@
 {
-    "site_name": "优品商城",
-    "hero_title": "优品商城",
-    "hero_subtitle": "品质生活，从这里开始",
-    "description": "精选全球优质商品，提供正品保障、快速配送、无忧退换的一站式购物体验。",
-    "carousel_title": "热门商品展示",
-    "carousel": [
-      "carousel-1.webp",
-      "carousel-2.webp",
-      "carousel-3.webp"
-    ],
-    "about_title": "关于我们",
-    "about_subtitle": "值得信赖的电商平台",
-    "about_us": "优品商城成立于2020年，专注于为用户提供优质商品和卓越服务。我们严格把控商品质量，与众多知名品牌建立合作关系，致力于成为用户最信赖的购物平台。",
-    "about_features": [
+    "site_name": "找素食 App",
+    "hero_title": "找素食 App",
+    "hero_subtitle": "让每一口都是健康、友善、环保的选择",
+    "description": "专注纯素有机食品的年轻化电商平台，精选全球优质素食产品，为你的健康生活提供美味选择。",
+    "store_features": [
       {
-        "icon": "bi-award-fill",
-        "title": "正品保障",
-        "description": "所有商品均为正品，假一赔十"
+        "icon": "bi-flower1",
+        "title": "100%纯素",
+        "description": "严格筛选，确保所有产品不含动物成分"
       },
       {
-        "icon": "bi-truck", 
-        "title": "快速配送",
-        "description": "全国包邮，24小时内发货"
+        "icon": "bi-award", 
+        "title": "有机认证",
+        "description": "国际有机认证，品质有保障"
       },
       {
-        "icon": "bi-arrow-clockwise",
-        "title": "无忧退换",
-        "description": "7天无理由退换，售后无忧"
+        "icon": "bi-heart",
+        "title": "健康生活",
+        "description": "为你的健康生活提供美味选择"
       }
     ],
-    "services_title": "服务特色",
-    "services_subtitle": "为您提供优质的购物体验",
+    "food_categories": [
+      {
+        "name": "植物蛋白",
+        "count": 150,
+        "icon": "bi-droplet",
+        "description": "植物奶、豆制品、坚果蛋白"
+      },
+      {
+        "name": "有机蔬果",
+        "count": 200,
+        "icon": "bi-flower1",
+        "description": "新鲜有机蔬菜、时令水果"
+      },
+      {
+        "name": "健康零食",
+        "count": 120,
+        "icon": "bi-cup-hot",
+        "description": "无添加零食、坚果、干果"
+      },
+      {
+        "name": "超级食物",
+        "count": 80,
+        "icon": "bi-star",
+        "description": "奇亚籽、藜麦、螺旋藻"
+      },
+      {
+        "name": "调味品",
+        "count": 90,
+        "icon": "bi-gear",
+        "description": "有机调味料、天然香料"
+      },
+      {
+        "name": "饮品",
+        "count": 100,
+        "icon": "bi-cup-straw",
+        "description": "植物奶、有机茶、果汁"
+      }
+    ],
+    "featured_products": [
+      {
+        "title": "有机杏仁奶",
+        "brand": "Nature's Best",
+        "original_price": "45.00",
+        "current_price": "32.00",
+        "discount": "限时8折",
+        "image": "product-1.jpg",
+        "category": "植物蛋白",
+        "tags": ["无糖", "高钙", "有机"]
+      },
+      {
+        "title": "奇亚籽能量棒",
+        "brand": "Vegan Power",
+        "original_price": "28.00",
+        "current_price": "22.00",
+        "discount": "新品特惠",
+        "image": "product-2.jpg",
+        "category": "健康零食",
+        "tags": ["高蛋白", "无麸质", "有机"]
+      },
+      {
+        "title": "有机藜麦",
+        "brand": "Pure Harvest",
+        "original_price": "68.00",
+        "current_price": "55.00",
+        "discount": "会员专享",
+        "image": "product-3.jpg",
+        "category": "超级食物",
+        "tags": ["全谷物", "高纤维", "有机"]
+      },
+      {
+        "title": "椰子油",
+        "brand": "Coconut Bliss",
+        "original_price": "88.00",
+        "current_price": "66.00",
+        "discount": "热销推荐",
+        "image": "product-4.jpg",
+        "category": "调味品",
+        "tags": ["冷压", "有机", "纯天然"]
+      }
+    ],
+    "services_title": "我们的服务",
+    "services_subtitle": "为你的健康生活保驾护航",
     "services": [
       {
-        "name": "正品直供",
-        "icon": "bi-shield-check",
-        "description": "与品牌方直接合作，确保商品正品"
+        "name": "专业营养师",
+        "icon": "bi-person-heart",
+        "description": "专业营养师提供个性化饮食建议"
       },
       {
         "name": "快速配送", 
         "icon": "bi-truck",
-        "description": "全国物流网络，快速送达"
+        "description": "冷链配送，保证产品新鲜度"
       },
       {
-        "name": "售后保障",
-        "icon": "bi-headset",
-        "description": "7×24小时客服，专业售后团队"
+        "name": "品质保证",
+        "icon": "bi-shield-check",
+        "description": "7天无理由退换，品质有保障"
       },
       {
-        "name": "会员特权",
+        "name": "会员专享",
         "icon": "bi-star-fill",
         "description": "会员专享优惠，积分兑换好礼"
       },
       {
-        "name": "移动购物",
-        "icon": "bi-phone-fill",
-        "description": "手机APP购物，随时随地下单"
+        "name": "社区交流",
+        "icon": "bi-people",
+        "description": "素食爱好者社区，分享健康生活"
       },
       {
-        "name": "直播带货",
-        "icon": "bi-camera-video-fill",
-        "description": "专业主播推荐，直播购物体验"
+        "name": "定制服务",
+        "icon": "bi-gear",
+        "description": "个性化定制，满足特殊需求"
+      }
+    ],
+    "about_title": "关于抱抱猪",
+    "about_subtitle": "让健康生活更简单",
+    "about_us": "抱抱猪·找素食成立于2025年，致力于为追求健康生活的年轻人提供优质的纯素有机食品。我们相信，每一口食物都应该是对身体和地球的善意。通过严格的品质把控和专业的服务，让素食生活变得更加简单和美味。",
+    "about_features": [
+      {
+        "icon": "bi-flower1",
+        "title": "纯素理念",
+        "description": "100%纯素，不含任何动物成分"
+      },
+      {
+        "icon": "bi-award-fill", 
+        "title": "有机认证",
+        "description": "国际有机认证，品质有保障"
+      },
+      {
+        "icon": "bi-heart-fill",
+        "title": "健康生活",
+        "description": "为你的健康生活提供美味选择"
       }
     ],
     "contact_title": "联系我们",
-    "contact_subtitle": "随时为您提供帮助",
+    "contact_subtitle": "随时为你提供帮助",
     "contact": {
-      "address": "上海市浦东新区电商园区",
-      "phone": "400-123-4567",
-      "email": "service@youpin.com",
-      "work_time": "7×24小时客服热线",
-      "icp": "沪ICP备20250000号",
-      "police": "沪公网安备110105000000号"
+      "address": "广州市番禺区金山谷",
+      "phone": "400-888-9999",
+      "email": "hello@huggypig.com",
+      "work_time": "周一至周日 9:00-21:00",
+      "icp": "粤ICP备20250000号",
+      "police": "粤公网安备110105000000号"
     },
     "footer": {
-      "copyright": "© 2024 优品商城. 保留所有权利。",
-      "description": "品质生活，从这里开始"
+      "copyright": "© 2025 抱抱猪·找素食 保留所有权利。",
+      "description": "让每一口都是健康、友善、环保的选择"
     }
   }
   
