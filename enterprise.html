@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>广州极客艾特计算机系统有限公司</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 120px 0 100px;
+    }
+    .service-card {
+      transition: transform 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    .carousel-item img {
+      height: 400px;
+      object-fit: cover;
+    }
+    .footer {
+      background-color: #343a40;
+      color: white;
+      padding: 40px 0 20px;
+    }
+    .footer h5 {
+      color: #ffffff;
+      font-weight: bold;
+    }
+    .footer p, .footer small {
+      color: #e9ecef;
+    }
+    .footer .text-muted {
+      color: #adb5bd !important;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand img {
+      height: 32px;
+      margin-right: 10px;
+    }
+    .section-padding {
+      padding: 80px 0;
+    }
+    .bg-light-gray {
+      background-color: #f8f9fa;
+    }
+    .feature-card {
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+    }
+    .feature-icon {
+      font-size: 3rem;
+      color: #667eea;
+      margin-bottom: 20px;
+    }
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .footer-section {
+      padding: 0 15px;
+    }
+    .footer-section h6 {
+      color: #ffffff;
+      font-weight: 600;
+      border-bottom: 2px solid #495057;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+    .contact-info .d-flex {
+      transition: transform 0.2s ease;
+    }
+    .contact-info .d-flex:hover {
+      transform: translateX(5px);
+    }
+    .social-links a {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      background-color: #495057;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    .social-links a:hover {
+      background-color: #6c757d;
+      transform: translateY(-2px);
+    }
+    .icp-info small {
+      color: #adb5bd;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="logo.svg" alt="Logo" class="d-inline-block align-text-top">
+        广州极客艾特计算机系统有限公司
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">关于我们</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">服务内容</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">联系我们</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主要内容区域 -->
+  <main>
+    <!-- 英雄区域 -->
+    <section id="home" class="hero-section">
+      <div class="container text-center">
+        <h1 class="display-3 fw-bold mb-5">极客艾特 Geek@</h1>
+        <h2 class="display-6 mb-5">企业信息化解决方案专家</h2>
+        <p class="fs-5">我们为客户提供一站式 IT 服务，包括服务器运维、项目开发、备案咨询、安全防护等。</p>
+      </div>
+    </section>
+
+    <!-- 轮播图 -->
+    
+    <section class="py-5">
+      <div class="container">
+        
+        <div class="text-center mb-4">
+          <h2 class="display-5 fw-bold">我们的服务场景</h2>
+        </div>
+        
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" 
+                    class="active"></button>
+            
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" 
+                    ></button>
+            
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" 
+                    ></button>
+            
+          </div>
+          <div class="carousel-inner">
+            
+            <div class="carousel-item active">
+              <img src="carousel-1.jpg" class="d-block w-100" alt="Banner 1">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>专业服务场景 1</h5>
+                <p>为您提供最优质的技术解决方案</p>
+              </div>
+            </div>
+            
+            <div class="carousel-item ">
+              <img src="carousel-2.jpg" class="d-block w-100" alt="Banner 2">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>专业服务场景 2</h5>
+                <p>为您提供最优质的技术解决方案</p>
+              </div>
+            </div>
+            
+            <div class="carousel-item ">
+              <img src="carousel-3.jpg" class="d-block w-100" alt="Banner 3">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>专业服务场景 3</h5>
+                <p>为您提供最优质的技术解决方案</p>
+              </div>
+            </div>
+            
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- 关于我们 -->
+    <section id="about" class="section-padding bg-light-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="display-5 fw-bold">关于我们</h2>
+            
+            <p class="lead text-muted">专业团队，值得信赖</p>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center mb-5">
+            <p class="lead">成立于2025年，我们是一家专注于企业信息化解决方案的科技公司。凭借专业的技术团队和丰富的行业经验，我们已成功服务全国200+企业客户，涵盖金融、教育、制造、互联网等多个行业。</p>
+          </div>
+        </div>
+        
+        <div class="row g-4">
+          
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-award-fill"></i>
+              </div>
+              <h5 class="fw-bold mb-3">专业认证</h5>
+              <p class="text-muted">获得多项行业认证，技术实力得到权威认可</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <h5 class="fw-bold mb-3">团队经验</h5>
+              <p class="text-muted">平均8年以上行业经验，技术专家团队</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-shield-lock-fill"></i>
+              </div>
+              <h5 class="fw-bold mb-3">安全可靠</h5>
+              <p class="text-muted">严格的安全标准，保障客户数据安全</p>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- 服务内容 -->
+    <section id="services" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="display-5 fw-bold">核心服务</h2>
+            
+            <p class="lead text-muted">为您提供全方位的技术解决方案</p>
+            
+          </div>
+        </div>
+        <div class="row g-4">
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="card service-card h-100">
+              <div class="card-body text-center">
+                <div class="mb-3">
+                  <i class="bi bi-server text-primary" style="font-size: 2rem;"></i>
+                </div>
+                <h5 class="card-title">服务器运维</h5>
+                <p class="card-text text-muted">7×24小时专业运维服务，确保系统稳定运行</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="card service-card h-100">
+              <div class="card-body text-center">
+                <div class="mb-3">
+                  <i class="bi bi-graph-up text-primary" style="font-size: 2rem;"></i>
+                </div>
+                <h5 class="card-title">系统监控</h5>
+                <p class="card-text text-muted">实时监控系统性能，提前预警潜在问题</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="card service-card h-100">
+              <div class="card-body text-center">
+                <div class="mb-3">
+                  <i class="bi bi-shield-lock-fill text-primary" style="font-size: 2rem;"></i>
+                </div>
+                <h5 class="card-title">安全加固</h5>
+                <p class="card-text text-muted">全方位安全防护，抵御各类网络威胁</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="card service-card h-100">
+              <div class="card-body text-center">
+                <div class="mb-3">
+                  <i class="bi bi-file-earmark-check-fill text-primary" style="font-size: 2rem;"></i>
+                </div>
+                <h5 class="card-title">ICP备案</h5>
+                <p class="card-text text-muted">专业备案服务，快速通过审核</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="card service-card h-100">
+              <div class="card-body text-center">
+                <div class="mb-3">
+                  <i class="bi bi-code-slash text-primary" style="font-size: 2rem;"></i>
+                </div>
+                <h5 class="card-title">项目开发</h5>
+                <p class="card-text text-muted">定制化软件开发，满足企业个性化需求</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="card service-card h-100">
+              <div class="card-body text-center">
+                <div class="mb-3">
+                  <i class="bi bi-chat-dots-fill text-primary" style="font-size: 2rem;"></i>
+                </div>
+                <h5 class="card-title">技术咨询</h5>
+                <p class="card-text text-muted">专业技术咨询，助力企业数字化转型</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="section-padding bg-light-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="display-5 fw-bold">联系我们</h2>
+            
+            <p class="lead text-muted">随时为您提供专业服务</p>
+            
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body text-center">
+                <h5 class="card-title"><i class="bi bi-geo-alt-fill text-primary me-2"></i>公司地址</h5>
+                <p class="card-text">广州市小蛮腰科技园G栋101室</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body text-center">
+                <h5 class="card-title"><i class="bi bi-telephone-fill text-primary me-2"></i>联系电话</h5>
+                <p class="card-text">020-12345678</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body text-center">
+                <h5 class="card-title"><i class="bi bi-envelope-fill text-primary me-2"></i>邮箱地址</h5>
+                <p class="card-text">contact@geekat.cn</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body text-center">
+                <h5 class="card-title"><i class="bi bi-clock-fill text-primary me-2"></i>工作时间</h5>
+                <p class="card-text">周一至周五 9:00-18:00</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- 公司信息 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <h5 class="mb-3">
+              <img src="logo.svg" alt="Logo" style="height: 24px; margin-right: 8px;">
+              极客艾特 Geek@
+            </h5>
+            <p class="mb-3">专注于企业信息化解决方案，助力企业数字化转型</p>
+            <div class="social-links">
+              <a href="#" class="text-light me-3"><i class="bi bi-envelope-fill"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-telephone-fill"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-geo-alt-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 联系信息 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <h6 class="mb-3">联系方式</h6>
+            <div class="contact-info">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-geo-alt-fill me-2"></i>
+                <small>广州市小蛮腰科技园G栋101室</small>
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-telephone-fill me-2"></i>
+                <small>020-12345678</small>
+              </div>
+              
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-envelope-fill me-2"></i>
+                <small>contact@geekat.cn</small>
+              </div>
+              
+              
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-clock-fill me-2"></i>
+                <small>周一至周五 9:00-18:00</small>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+        <!-- 备案信息 -->
+        <div class="col-lg-4 col-md-12">
+          <div class="footer-section">
+            <h6 class="mb-3">备案信息</h6>
+            <div class="icp-info">
+              <div class="mb-2">
+                <small>ICP备案号：粤ICP备20250000号</small>
+              </div>
+              <div class="mb-2">
+                <small>公安备案号：粤公网安备110105000000号</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 分隔线 -->
+      <hr class="my-4 border-secondary">
+      
+      <!-- 版权信息 -->
+      <div class="row">
+        <div class="col-12 text-center">
+          <small class="text-muted">© 2024 广州极客艾特计算机系统有限公司. 保留所有权利。</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

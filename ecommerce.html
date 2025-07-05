@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>找素食 App</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #2d3748;
+      background-color: #f7fafc;
+    }
+    
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      color: #38a169 !important;
+      font-size: 1.5rem;
+    }
+    
+    .nav-link {
+      color: #4a5568 !important;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: #38a169 !important;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, #38a169 0%, #48bb78 50%, #68d391 100%);
+      color: white;
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="30" fill="rgba(255,255,255,0.1)">🥬</text></svg>') repeat;
+      opacity: 0.3;
+    }
+    
+    .hero-section .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-section h1 {
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .hero-section p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    
+    .section-padding {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      font-weight: 800;
+      color: #2d3748;
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #38a169, #48bb78);
+      border-radius: 2px;
+    }
+    
+    .feature-card {
+      background: white;
+      border: none;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(56, 161, 105, 0.1);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(56, 161, 105, 0.2);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      color: #38a169;
+      margin-bottom: 1.5rem;
+    }
+    
+    .category-card {
+      background: white;
+      border: none;
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      box-shadow: 0 4px 20px rgba(56, 161, 105, 0.1);
+    }
+    
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(56, 161, 105, 0.2);
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .category-icon {
+      font-size: 2.5rem;
+      color: #38a169;
+      margin-bottom: 1rem;
+    }
+    
+    .category-count {
+      background: linear-gradient(135deg, #38a169, #48bb78);
+      color: white;
+      border-radius: 25px;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+    
+    .product-card {
+      background: white;
+      border: none;
+      border-radius: 20px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(56, 161, 105, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(56, 161, 105, 0.2);
+    }
+    
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 1rem;
+    }
+    
+    .product-title {
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .product-brand {
+      color: #718096;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    .product-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .current-price {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #e53e3e;
+    }
+    
+    .original-price {
+      text-decoration: line-through;
+      color: #a0aec0;
+      font-size: 0.9rem;
+    }
+    
+    .discount-badge {
+      background: linear-gradient(135deg, #e53e3e, #fc8181);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    
+    .product-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .product-tag {
+      background-color: #f7fafc;
+      color: #38a169;
+      padding: 0.25rem 0.5rem;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid #e2e8f0;
+    }
+    
+    .product-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .product-actions .btn {
+      flex: 1;
+      min-width: 0;
+      white-space: nowrap;
+      font-size: 0.8rem;
+      padding: 0.375rem 0.75rem;
+    }
+    
+    .product-actions .discount-badge {
+      flex-shrink: 0;
+    }
+    
+    .service-card {
+      background: white;
+      border: none;
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(56, 161, 105, 0.1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(56, 161, 105, 0.2);
+    }
+    
+    .service-icon {
+      font-size: 2.5rem;
+      color: #38a169;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer {
+      background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+      color: white;
+      padding: 40px 0 20px;
+    }
+    
+    .footer h5 {
+      color: #48bb78;
+      font-weight: 700;
+    }
+    
+    .footer p, .footer small {
+      color: #e2e8f0;
+    }
+    
+    .footer .text-muted {
+      color: #a0aec0 !important;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #38a169, #48bb78);
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #2f855a, #38a169);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(56, 161, 105, 0.3);
+    }
+    
+    .bg-light-green {
+      background-color: #f0fff4;
+    }
+    
+    .contact-card {
+      background: white;
+      border: none;
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(56, 161, 105, 0.1);
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(56, 161, 105, 0.2);
+    }
+    
+    .contact-icon {
+      font-size: 2rem;
+      color: #38a169;
+      margin-bottom: 1rem;
+    }
+    
+    .floating-shapes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    
+    .shape {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .shape:nth-child(1) {
+      width: 80px;
+      height: 80px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+    
+    .shape:nth-child(2) {
+      width: 60px;
+      height: 60px;
+      top: 60%;
+      right: 10%;
+      animation-delay: 2s;
+    }
+    
+    .shape:nth-child(3) {
+      width: 40px;
+      height: 40px;
+      top: 40%;
+      left: 80%;
+      animation-delay: 4s;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        🍏 找素食 App
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#categories">产品分类</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#products">精选产品</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">服务</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">关于我们</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">联系</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主要内容区域 -->
+  <main>
+    <!-- 英雄区域 -->
+    <section id="home" class="hero-section">
+      <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+      </div>
+      <div class="container">
+        <h1 class="display-4 fw-bold">找素食 App</h1>
+        <h2 class="h3 mb-4">让每一口都是健康、友善、环保的选择</h2>
+        <p class="lead mb-5">专注纯素有机食品的年轻化电商平台，精选全球优质素食产品，为你的健康生活提供美味选择。</p>
+        <a href="#categories" class="btn btn-primary btn-lg">
+          <i class="bi bi-search me-2"></i>探索产品
+        </a>
+      </div>
+    </section>
+
+    <!-- 平台特色 -->
+    
+    <section class="section-padding bg-light-green">
+      <div class="container">
+        <h2 class="section-title">平台特色</h2>
+        <div class="row g-4 align-items-stretch">
+          
+          <div class="col-md-4 d-flex">
+            <div class="feature-card w-100">
+              <div class="feature-icon">
+                <i class="bi bi-flower1"></i>
+              </div>
+              <h5 class="fw-bold mb-3">100%纯素</h5>
+              <p class="text-muted">严格筛选，确保所有产品不含动物成分</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4 d-flex">
+            <div class="feature-card w-100">
+              <div class="feature-icon">
+                <i class="bi bi-award"></i>
+              </div>
+              <h5 class="fw-bold mb-3">有机认证</h5>
+              <p class="text-muted">国际有机认证，品质有保障</p>
+            </div>
+          </div>
+          
+          <div class="col-md-4 d-flex">
+            <div class="feature-card w-100">
+              <div class="feature-icon">
+                <i class="bi bi-heart"></i>
+              </div>
+              <h5 class="fw-bold mb-3">健康生活</h5>
+              <p class="text-muted">为你的健康生活提供美味选择</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- 产品分类 -->
+    
+    <section id="categories" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">产品分类</h2>
+        <div class="row g-4">
+          
+          <div class="col-md-6 col-lg-4">
+            <a href="#" class="category-card">
+              <div class="category-icon">
+                <i class="bi bi-droplet"></i>
+              </div>
+              <h5 class="fw-bold mb-2">植物蛋白</h5>
+              <p class="text-muted mb-3">植物奶、豆制品、坚果蛋白</p>
+              <span class="category-count">150 款产品</span>
+            </a>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <a href="#" class="category-card">
+              <div class="category-icon">
+                <i class="bi bi-flower1"></i>
+              </div>
+              <h5 class="fw-bold mb-2">有机蔬果</h5>
+              <p class="text-muted mb-3">新鲜有机蔬菜、时令水果</p>
+              <span class="category-count">200 款产品</span>
+            </a>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <a href="#" class="category-card">
+              <div class="category-icon">
+                <i class="bi bi-cup-hot"></i>
+              </div>
+              <h5 class="fw-bold mb-2">健康零食</h5>
+              <p class="text-muted mb-3">无添加零食、坚果、干果</p>
+              <span class="category-count">120 款产品</span>
+            </a>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <a href="#" class="category-card">
+              <div class="category-icon">
+                <i class="bi bi-star"></i>
+              </div>
+              <h5 class="fw-bold mb-2">超级食物</h5>
+              <p class="text-muted mb-3">奇亚籽、藜麦、螺旋藻</p>
+              <span class="category-count">80 款产品</span>
+            </a>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <a href="#" class="category-card">
+              <div class="category-icon">
+                <i class="bi bi-gear"></i>
+              </div>
+              <h5 class="fw-bold mb-2">调味品</h5>
+              <p class="text-muted mb-3">有机调味料、天然香料</p>
+              <span class="category-count">90 款产品</span>
+            </a>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <a href="#" class="category-card">
+              <div class="category-icon">
+                <i class="bi bi-cup-straw"></i>
+              </div>
+              <h5 class="fw-bold mb-2">饮品</h5>
+              <p class="text-muted mb-3">植物奶、有机茶、果汁</p>
+              <span class="category-count">100 款产品</span>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- 精选产品 -->
+    
+    <section id="products" class="section-padding bg-light-green">
+      <div class="container">
+        <h2 class="section-title">精选产品</h2>
+        <div class="row g-4">
+          
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="product-card">
+              <img src="product-1.jpg" alt="有机杏仁奶" class="product-image">
+              <h6 class="product-title">有机杏仁奶</h6>
+              <p class="product-brand">Nature's Best</p>
+              <div class="product-tags">
+                
+                <span class="product-tag">无糖</span>
+                
+                <span class="product-tag">高钙</span>
+                
+                <span class="product-tag">有机</span>
+                
+              </div>
+              <div class="product-price">
+                <span class="current-price">¥32.00</span>
+                <span class="original-price">¥45.00</span>
+              </div>
+              <div class="product-actions">
+                <span class="discount-badge">限时8折</span>
+                <a href="#" class="btn btn-primary btn-sm">
+                  <i class="bi bi-cart-plus me-1"></i>加入购物车
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="product-card">
+              <img src="product-2.jpg" alt="奇亚籽能量棒" class="product-image">
+              <h6 class="product-title">奇亚籽能量棒</h6>
+              <p class="product-brand">Vegan Power</p>
+              <div class="product-tags">
+                
+                <span class="product-tag">高蛋白</span>
+                
+                <span class="product-tag">无麸质</span>
+                
+                <span class="product-tag">有机</span>
+                
+              </div>
+              <div class="product-price">
+                <span class="current-price">¥22.00</span>
+                <span class="original-price">¥28.00</span>
+              </div>
+              <div class="product-actions">
+                <span class="discount-badge">新品特惠</span>
+                <a href="#" class="btn btn-primary btn-sm">
+                  <i class="bi bi-cart-plus me-1"></i>加入购物车
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="product-card">
+              <img src="product-3.jpg" alt="有机藜麦" class="product-image">
+              <h6 class="product-title">有机藜麦</h6>
+              <p class="product-brand">Pure Harvest</p>
+              <div class="product-tags">
+                
+                <span class="product-tag">全谷物</span>
+                
+                <span class="product-tag">高纤维</span>
+                
+                <span class="product-tag">有机</span>
+                
+              </div>
+              <div class="product-price">
+                <span class="current-price">¥55.00</span>
+                <span class="original-price">¥68.00</span>
+              </div>
+              <div class="product-actions">
+                <span class="discount-badge">会员专享</span>
+                <a href="#" class="btn btn-primary btn-sm">
+                  <i class="bi bi-cart-plus me-1"></i>加入购物车
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="product-card">
+              <img src="product-4.jpg" alt="椰子油" class="product-image">
+              <h6 class="product-title">椰子油</h6>
+              <p class="product-brand">Coconut Bliss</p>
+              <div class="product-tags">
+                
+                <span class="product-tag">冷压</span>
+                
+                <span class="product-tag">有机</span>
+                
+                <span class="product-tag">纯天然</span>
+                
+              </div>
+              <div class="product-price">
+                <span class="current-price">¥66.00</span>
+                <span class="original-price">¥88.00</span>
+              </div>
+              <div class="product-actions">
+                <span class="discount-badge">热销推荐</span>
+                <a href="#" class="btn btn-primary btn-sm">
+                  <i class="bi bi-cart-plus me-1"></i>加入购物车
+                </a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- 服务内容 -->
+    <section id="services" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">我们的服务</h2>
+        
+        <p class="lead text-center text-muted mb-5">为你的健康生活保驾护航</p>
+        
+        <div class="row g-4">
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-person-heart"></i>
+              </div>
+              <h5 class="fw-bold mb-3">专业营养师</h5>
+              <p class="text-muted">专业营养师提供个性化饮食建议</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-truck"></i>
+              </div>
+              <h5 class="fw-bold mb-3">快速配送</h5>
+              <p class="text-muted">冷链配送，保证产品新鲜度</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h5 class="fw-bold mb-3">品质保证</h5>
+              <p class="text-muted">7天无理由退换，品质有保障</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <h5 class="fw-bold mb-3">会员专享</h5>
+              <p class="text-muted">会员专享优惠，积分兑换好礼</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-people"></i>
+              </div>
+              <h5 class="fw-bold mb-3">社区交流</h5>
+              <p class="text-muted">素食爱好者社区，分享健康生活</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="bi bi-gear"></i>
+              </div>
+              <h5 class="fw-bold mb-3">定制服务</h5>
+              <p class="text-muted">个性化定制，满足特殊需求</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="section-padding bg-light-green">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="section-title">关于抱抱猪</h2>
+            
+            <p class="lead text-muted mb-5">让健康生活更简单</p>
+            
+            <p class="lead mb-5">抱抱猪·找素食成立于2025年，致力于为追求健康生活的年轻人提供优质的纯素有机食品。我们相信，每一口食物都应该是对身体和地球的善意。通过严格的品质把控和专业的服务，让素食生活变得更加简单和美味。</p>
+            
+            
+            <div class="row g-4">
+              
+              <div class="col-md-4">
+                <div class="text-center">
+                  <div class="feature-icon">
+                    <i class="bi bi-flower1"></i>
+                  </div>
+                  <h5 class="fw-bold mb-3">纯素理念</h5>
+                  <p class="text-muted">100%纯素，不含任何动物成分</p>
+                </div>
+              </div>
+              
+              <div class="col-md-4">
+                <div class="text-center">
+                  <div class="feature-icon">
+                    <i class="bi bi-award-fill"></i>
+                  </div>
+                  <h5 class="fw-bold mb-3">有机认证</h5>
+                  <p class="text-muted">国际有机认证，品质有保障</p>
+                </div>
+              </div>
+              
+              <div class="col-md-4">
+                <div class="text-center">
+                  <div class="feature-icon">
+                    <i class="bi bi-heart-fill"></i>
+                  </div>
+                  <h5 class="fw-bold mb-3">健康生活</h5>
+                  <p class="text-muted">为你的健康生活提供美味选择</p>
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="section-title">联系我们</h2>
+            
+            <p class="lead text-muted mb-5">随时为你提供帮助</p>
+            
+            
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="contact-card">
+                  <div class="contact-icon">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <h5 class="fw-bold">公司地址</h5>
+                  <p class="mb-0">广州市番禺区金山谷</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="contact-card">
+                  <div class="contact-icon">
+                    <i class="bi bi-telephone-fill"></i>
+                  </div>
+                  <h5 class="fw-bold">联系电话</h5>
+                  <p class="mb-0">400-888-9999</p>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="contact-card">
+                  <div class="contact-icon">
+                    <i class="bi bi-envelope-fill"></i>
+                  </div>
+                  <h5 class="fw-bold">邮箱地址</h5>
+                  <p class="mb-0">hello@huggypig.com</p>
+                </div>
+              </div>
+              
+              
+              <div class="col-md-6">
+                <div class="contact-card">
+                  <div class="contact-icon">
+                    <i class="bi bi-clock-fill"></i>
+                  </div>
+                  <h5 class="fw-bold">营业时间</h5>
+                  <p class="mb-0">周一至周日 9:00-21:00</p>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- 公司信息 -->
+        <div class="col-lg-6">
+          <h5 class="mb-3">
+            🍏 找素食 App
+          </h5>
+          <p class="mb-3">让每一口都是健康、友善、环保的选择</p>
+        </div>
+        
+        <!-- 备案信息 -->
+        <div class="col-lg-6">
+          <h6 class="mb-3">备案信息</h6>
+          <div class="mb-2">
+            <small>ICP备案号：粤ICP备20250000号</small>
+          </div>
+          <div class="mb-2">
+            <small>公安备案号：粤公网安备110105000000号</small>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 分隔线 -->
+      <hr class="my-4 border-secondary">
+      
+      <!-- 版权信息 -->
+      <div class="row">
+        <div class="col-12 text-center">
+          <small class="text-muted">© 2025 抱抱猪·找素食 保留所有权利。</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

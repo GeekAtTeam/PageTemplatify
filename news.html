@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>极客新闻</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 120px 0 100px;
+    }
+    .service-card {
+      transition: transform 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    .carousel-item img {
+      height: 400px;
+      object-fit: cover;
+    }
+    .footer {
+      background-color: #343a40;
+      color: white;
+      padding: 40px 0 20px;
+    }
+    .footer h5 {
+      color: #ffffff;
+      font-weight: bold;
+    }
+    .footer p, .footer small {
+      color: #e9ecef;
+    }
+    .footer .text-muted {
+      color: #adb5bd !important;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand img {
+      height: 32px;
+      margin-right: 10px;
+    }
+    .section-padding {
+      padding: 80px 0;
+    }
+    .bg-light-gray {
+      background-color: #f8f9fa;
+    }
+    .feature-card {
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+    }
+    .feature-icon {
+      font-size: 3rem;
+      color: #667eea;
+      margin-bottom: 20px;
+    }
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .footer-section {
+      padding: 0 15px;
+    }
+    .footer-section h6 {
+      color: #ffffff;
+      font-weight: 600;
+      border-bottom: 2px solid #495057;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+    .contact-info .d-flex {
+      transition: transform 0.2s ease;
+    }
+    .contact-info .d-flex:hover {
+      transform: translateX(5px);
+    }
+    .social-links a {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      background-color: #495057;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    .social-links a:hover {
+      background-color: #6c757d;
+      transform: translateY(-2px);
+    }
+    .icp-info small {
+      color: #adb5bd;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="logo.svg" alt="Logo" class="d-inline-block align-text-top" style="height:32px; margin-right:8px;">
+        极客新闻
+      </a>
+      <div class="d-flex ms-auto align-items-center gap-2">
+        <form class="d-none d-lg-flex me-2" role="search">
+          <input class="form-control form-control-sm" type="search" placeholder="搜索" aria-label="搜索" style="width:140px;">
+        </form>
+        <a href="#" class="btn btn-outline-light btn-sm">登录</a>
+        <a href="#" class="btn btn-primary btn-sm">注册</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 轮播图 -->
+  
+  <section class="pt-5 pb-4 bg-light">
+    <div class="container">
+      <div class="mb-4" style="height:32px;"></div>
+      <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          
+          <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+          
+          <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" ></button>
+          
+          <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" ></button>
+          
+        </div>
+        <div class="carousel-inner rounded-4 shadow-sm">
+          
+          <div class="carousel-item active position-relative">
+            <img src="carousel-1.jpg" class="d-block w-100" alt="Banner 1">
+            <div class="carousel-caption d-block w-100" style="bottom: 8%; left: 50%; transform: translateX(-50%); background:rgba(34,34,34,0.65); border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:24px 32px; max-width:600px;">
+              <h5 class="text-white mb-2 text-center" style="font-size:1.5rem;">亚马逊搅动海淘棋局 打出一套新的组合拳。</h5>
+              <p class="text-light small mb-0 text-center">亚马逊新动作引发行业关注，海淘市场格局或将重塑。</p>
+            </div>
+          </div>
+          
+          <div class="carousel-item  position-relative">
+            <img src="carousel-2.jpg" class="d-block w-100" alt="Banner 2">
+            <div class="carousel-caption d-block w-100" style="bottom: 8%; left: 50%; transform: translateX(-50%); background:rgba(34,34,34,0.65); border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:24px 32px; max-width:600px;">
+              <h5 class="text-white mb-2 text-center" style="font-size:1.5rem;">阿里启动超百亿元融资 零息债输血AI野心</h5>
+              <p class="text-light small mb-0 text-center">阿里巴巴加码AI领域，资本市场反应积极。</p>
+            </div>
+          </div>
+          
+          <div class="carousel-item  position-relative">
+            <img src="carousel-3.jpg" class="d-block w-100" alt="Banner 3">
+            <div class="carousel-caption d-block w-100" style="bottom: 8%; left: 50%; transform: translateX(-50%); background:rgba(34,34,34,0.65); border-radius:18px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:24px 32px; max-width:600px;">
+              <h5 class="text-white mb-2 text-center" style="font-size:1.5rem;">美团加码7万亿服务零售大市场</h5>
+              <p class="text-light small mb-0 text-center">美团持续扩展服务零售，行业竞争加剧。</p>
+            </div>
+          </div>
+          
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- 主体两栏布局 -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- 左栏：主要新闻 -->
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body pb-0">
+              <ul class="nav nav-tabs mb-3" id="newsTab" role="tablist">
+                
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="tab-hot" data-bs-toggle="tab" data-bs-target="#tab-pane-hot" type="button" role="tab">热门</button>
+                </li>
+                
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link " id="tab-latest" data-bs-toggle="tab" data-bs-target="#tab-pane-latest" type="button" role="tab">最新</button>
+                </li>
+                
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link " id="tab-ai" data-bs-toggle="tab" data-bs-target="#tab-pane-ai" type="button" role="tab">AI</button>
+                </li>
+                
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link " id="tab-opensource" data-bs-toggle="tab" data-bs-target="#tab-pane-opensource" type="button" role="tab">开源</button>
+                </li>
+                
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link " id="tab-product" data-bs-toggle="tab" data-bs-target="#tab-pane-product" type="button" role="tab">产品</button>
+                </li>
+                
+              </ul>
+              <div class="tab-content" id="newsTabContent">
+                
+                <div class="tab-pane fade show active" id="tab-pane-hot" role="tabpanel">
+                  <ul class="list-group list-group-flush">
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">热门</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">马斯克发布xAI新一代大模型Groq-2，性能超GPT-4o</a>
+                          <div class="small text-muted mt-1">马斯克旗下xAI团队发布Groq-2模型，推理速度和多模态能力大幅提升。</div>
+                        </div>
+                        <span class="text-muted small ms-3">1小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">热门</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">英伟达市值突破3万亿美元，超越苹果成全球第二</a>
+                          <div class="small text-muted mt-1">AI芯片龙头英伟达市值再创新高，受益于AI算力需求激增。</div>
+                        </div>
+                        <span class="text-muted small ms-3">2小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">热门</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">华为发布盘古大模型3.0，聚焦工业与医疗场景</a>
+                          <div class="small text-muted mt-1">华为盘古3.0大模型在工业质检、医疗影像等领域落地应用。</div>
+                        </div>
+                        <span class="text-muted small ms-3">3小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">热门</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">小鹏汽车城市NGP智能驾驶扩展至全国</a>
+                          <div class="small text-muted mt-1">小鹏汽车宣布城市NGP智能驾驶功能覆盖全国主要城市。</div>
+                        </div>
+                        <span class="text-muted small ms-3">4小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">热门</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">人形机器人公司Figure获10亿美元融资，OpenAI参投</a>
+                          <div class="small text-muted mt-1">Figure宣布完成新一轮融资，OpenAI、微软等科技巨头参与。</div>
+                        </div>
+                        <span class="text-muted small ms-3">5小时前</span>
+                      </div>
+                    </li>
+                    
+                  </ul>
+                </div>
+                
+                <div class="tab-pane fade " id="tab-pane-latest" role="tabpanel">
+                  <ul class="list-group list-group-flush">
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">最新</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">英特尔发布18A制程工艺，挑战台积电领先地位</a>
+                          <div class="small text-muted mt-1">英特尔18A工艺量产在即，全球半导体格局或将重塑。</div>
+                        </div>
+                        <span class="text-muted small ms-3">30分钟前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">最新</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">华为Mate 70系列曝光，或搭载自研AI芯片</a>
+                          <div class="small text-muted mt-1">华为新旗舰手机Mate 70系列将于下半年发布，AI能力大幅提升。</div>
+                        </div>
+                        <span class="text-muted small ms-3">1小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">最新</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">特斯拉FSD V12推送中国，自动驾驶体验升级</a>
+                          <div class="small text-muted mt-1">特斯拉FSD V12正式登陆中国市场，自动驾驶能力再进化。</div>
+                        </div>
+                        <span class="text-muted small ms-3">2小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">最新</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">英伟达发布新一代AI推理芯片Blackwell</a>
+                          <div class="small text-muted mt-1">Blackwell芯片专为大模型推理设计，能效比提升显著。</div>
+                        </div>
+                        <span class="text-muted small ms-3">3小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">最新</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">人形机器人Atlas 2.0亮相，灵巧度大幅提升</a>
+                          <div class="small text-muted mt-1">波士顿动力发布新一代人形机器人Atlas 2.0，动作更自然。</div>
+                        </div>
+                        <span class="text-muted small ms-3">4小时前</span>
+                      </div>
+                    </li>
+                    
+                  </ul>
+                </div>
+                
+                <div class="tab-pane fade " id="tab-pane-ai" role="tabpanel">
+                  <ul class="list-group list-group-flush">
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">AI</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">OpenAI发布GPT-5预览版，推理能力再升级</a>
+                          <div class="small text-muted mt-1">OpenAI新一代大模型GPT-5在多项基准测试中表现优异。</div>
+                        </div>
+                        <span class="text-muted small ms-3">1小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">AI</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">DeepSeek开源千亿参数大模型DeepSeek-VL</a>
+                          <div class="small text-muted mt-1">DeepSeek团队发布多模态大模型VL，支持图文理解与生成。</div>
+                        </div>
+                        <span class="text-muted small ms-3">2小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">AI</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">阿里巴巴Qwen大模型通过国际权威评测</a>
+                          <div class="small text-muted mt-1">Qwen大模型在MMLU、CMMLU等权威榜单取得领先成绩。</div>
+                        </div>
+                        <span class="text-muted small ms-3">3小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">AI</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">百度文心一言4.0升级，支持多语言和插件生态</a>
+                          <div class="small text-muted mt-1">百度文心一言4.0新增多语言支持，插件生态持续扩展。</div>
+                        </div>
+                        <span class="text-muted small ms-3">4小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">AI</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">智谱AI发布GLM-4模型，专注企业级AI应用</a>
+                          <div class="small text-muted mt-1">智谱AI新一代GLM-4模型在企业知识管理等场景表现突出。</div>
+                        </div>
+                        <span class="text-muted small ms-3">5小时前</span>
+                      </div>
+                    </li>
+                    
+                  </ul>
+                </div>
+                
+                <div class="tab-pane fade " id="tab-pane-opensource" role="tabpanel">
+                  <ul class="list-group list-group-flush">
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">开源</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">Gitee宣布支持AI模型托管，开源社区迎来新机遇</a>
+                          <div class="small text-muted mt-1">Gitee平台上线AI模型托管服务，助力国产AI生态发展。</div>
+                        </div>
+                        <span class="text-muted small ms-3">1小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">开源</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">开源中国举办2025全球开源创新论坛</a>
+                          <div class="small text-muted mt-1">OSCHINA主办的全球开源创新论坛在京召开，聚焦AI与开源。</div>
+                        </div>
+                        <span class="text-muted small ms-3">2小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">开源</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">GitHub Copilot X正式发布，AI辅助开发再升级</a>
+                          <div class="small text-muted mt-1">GitHub Copilot X集成多模态能力，提升开发效率。</div>
+                        </div>
+                        <span class="text-muted small ms-3">3小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">开源</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">LF AI基金会发布大模型评测基准OpenCompass</a>
+                          <div class="small text-muted mt-1">OpenCompass成为全球主流大模型评测工具，支持多语言。</div>
+                        </div>
+                        <span class="text-muted small ms-3">4小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">开源</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">国产数据库OceanBase开源社区活跃度创新高</a>
+                          <div class="small text-muted mt-1">OceanBase社区贡献者数量持续增长，企业用户广泛。</div>
+                        </div>
+                        <span class="text-muted small ms-3">5小时前</span>
+                      </div>
+                    </li>
+                    
+                  </ul>
+                </div>
+                
+                <div class="tab-pane fade " id="tab-pane-product" role="tabpanel">
+                  <ul class="list-group list-group-flush">
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">产品</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">AIFlowy 1.0.9发布，对标Coze和Dify的国产AI流程引擎</a>
+                          <div class="small text-muted mt-1">AIFlowy支持可视化AI流程编排，适合独立开发者和企业。</div>
+                        </div>
+                        <span class="text-muted small ms-3">1小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">产品</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">Nebula Framework 1.1.0正式发布，领域驱动设计应用框架</a>
+                          <div class="small text-muted mt-1">Nebula Framework专注企业级应用开发，开源免费。</div>
+                        </div>
+                        <span class="text-muted small ms-3">2小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">产品</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">灵韵启航者V1.0发布，模块化多主控嵌入式学习平台</a>
+                          <div class="small text-muted mt-1">灵韵启航者支持多种主控芯片，适合教育和创客。</div>
+                        </div>
+                        <span class="text-muted small ms-3">3小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">产品</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">OpenDeepWiki多轮对话全新升级，轻松接入项目</a>
+                          <div class="small text-muted mt-1">OpenDeepWiki支持多轮对话和知识库集成，适合AI助手。</div>
+                        </div>
+                        <span class="text-muted small ms-3">4小时前</span>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-3">产品</span>
+                        <div class="flex-grow-1">
+                          <a href="#" class="fw-bold text-dark text-decoration-none">VLOOK 30发布，支持发布为PDF及多项体验优化</a>
+                          <div class="small text-muted mt-1">VLOOK是一款实用的Markdown主题插件，适合内容创作者。</div>
+                        </div>
+                        <span class="text-muted small ms-3">5小时前</span>
+                      </div>
+                    </li>
+                    
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 右栏：用户讨论 -->
+        <div class="col-lg-4">
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-header bg-white fw-bold">用户讨论</div>
+            <div class="card-body p-0">
+              <ul class="list-group list-group-flush">
+                
+                <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                  <div class="d-flex align-items-start">
+                    <img src="avatar.jpg" alt="avatar" class="rounded-circle me-3" style="width:36px;height:36px;object-fit:cover;">
+                    <div>
+                      <div class="fw-bold">阿基米东</div>
+                      <div class="small text-muted mb-1">5分钟前</div>
+                      <div>AI 真的会取代程序员吗？大家怎么看？#程序员#</div>
+                    </div>
+                  </div>
+                </li>
+                
+                <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                  <div class="d-flex align-items-start">
+                    <img src="avatar.jpg" alt="avatar" class="rounded-circle me-3" style="width:36px;height:36px;object-fit:cover;">
+                    <div>
+                      <div class="fw-bold">阿基米东</div>
+                      <div class="small text-muted mb-1">10分钟前</div>
+                      <div>程序员拿新西兰工作签证的三条路！#海外工作#</div>
+                    </div>
+                  </div>
+                </li>
+                
+                <li class="list-group-item py-3 px-0 border-0 border-bottom">
+                  <div class="d-flex align-items-start">
+                    <img src="avatar.jpg" alt="avatar" class="rounded-circle me-3" style="width:36px;height:36px;object-fit:cover;">
+                    <div>
+                      <div class="fw-bold">阿基米东</div>
+                      <div class="small text-muted mb-1">20分钟前</div>
+                      <div>有手就行，轻松本地部署 Llama、Qwen 大模型，无需 GPU。 #AI#</div>
+                    </div>
+                  </div>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer bg-dark text-light py-4 mt-5">
+    <div class="container text-center">
+      <div class="mb-2">
+        <img src="logo.svg" alt="Logo" style="height:24px;vertical-align:middle;"> 极客新闻
+      </div>
+      <div class="small">及时、准确、权威的科技新闻资讯</div>
+      <div class="small text-muted mt-2">© 2025 极客新闻 保留所有权利。</div>
+      <div class="small text-muted mt-2">
+        <span>ICP备案号：京ICP备20250000号</span>
+        <span class="ms-3">公安备案号：京公网安备110105000000号</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
