@@ -1,0 +1,81 @@
+{
+    "site_name": "技术探索者",
+    "hero_title": "技术探索者",
+    "hero_subtitle": "分享技术，记录生活",
+    "description": "一个专注于技术分享、学习笔记和个人感悟的博客平台。记录技术成长，分享生活点滴。",
+    "carousel_title": "精选文章",
+    "carousel": [
+      "carousel-1.webp",
+      "carousel-2.webp",
+      "carousel-3.webp"
+    ],
+    "about_title": "关于我",
+    "about_subtitle": "热爱技术的程序员",
+    "about_us": "我是一名热爱技术的程序员，专注于前端开发、后端架构和人工智能领域。这个博客是我分享技术心得、记录学习历程的地方。希望通过文字与大家交流，共同成长。",
+    "about_features": [
+      {
+        "icon": "bi-code-slash",
+        "title": "技术分享",
+        "description": "分享最新的技术趋势和开发经验"
+      },
+      {
+        "icon": "bi-book", 
+        "title": "学习笔记",
+        "description": "记录学习过程中的心得和总结"
+      },
+      {
+        "icon": "bi-chat-dots",
+        "title": "生活感悟",
+        "description": "分享生活中的思考和感悟"
+      }
+    ],
+    "services_title": "博客分类",
+    "services_subtitle": "涵盖多个技术领域",
+    "services": [
+      {
+        "name": "前端开发",
+        "icon": "bi-window",
+        "description": "Vue、React、TypeScript 等前端技术"
+      },
+      {
+        "name": "后端架构", 
+        "icon": "bi-server",
+        "description": "Node.js、Python、数据库设计"
+      },
+      {
+        "name": "人工智能",
+        "icon": "bi-cpu",
+        "description": "机器学习、深度学习、AI 应用"
+      },
+      {
+        "name": "DevOps",
+        "icon": "bi-gear",
+        "description": "Docker、Kubernetes、CI/CD"
+      },
+      {
+        "name": "开源项目",
+        "icon": "bi-github",
+        "description": "个人开源项目分享和介绍"
+      },
+      {
+        "name": "技术随笔",
+        "icon": "bi-pencil",
+        "description": "技术思考、行业观察、个人感悟"
+      }
+    ],
+    "contact_title": "联系我",
+    "contact_subtitle": "欢迎交流讨论",
+    "contact": {
+      "address": "中国",
+      "phone": "",
+      "email": "contact@techblog.com",
+      "work_time": "工作日回复",
+      "icp": "京ICP备20250000号",
+      "police": "京公网安备110105000000号"
+    },
+    "footer": {
+      "copyright": "© 2024 技术探索者. 保留所有权利。",
+      "description": "分享技术，记录生活"
+    }
+  }
+  

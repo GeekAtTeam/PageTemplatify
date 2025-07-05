@@ -1,0 +1,81 @@
+{
+    "site_name": "今日新闻",
+    "hero_title": "今日新闻",
+    "hero_subtitle": "及时、准确、权威的新闻资讯",
+    "description": "提供最新、最全面的新闻资讯，涵盖政治、经济、科技、文化、体育等各个领域，让您第一时间了解世界动态。",
+    "carousel_title": "热点新闻",
+    "carousel": [
+      "carousel-1.webp",
+      "carousel-2.webp",
+      "carousel-3.webp"
+    ],
+    "about_title": "关于我们",
+    "about_subtitle": "专业的新闻媒体平台",
+    "about_us": "今日新闻是一家专业的新闻媒体平台，致力于为用户提供及时、准确、权威的新闻资讯。我们拥有专业的采编团队和广泛的新闻来源，确保新闻的真实性和时效性。",
+    "about_features": [
+      {
+        "icon": "bi-clock",
+        "title": "及时报道",
+        "description": "24小时不间断更新，第一时间发布新闻"
+      },
+      {
+        "icon": "bi-shield-check", 
+        "title": "真实可靠",
+        "description": "严格审核机制，确保新闻真实可信"
+      },
+      {
+        "icon": "bi-globe",
+        "title": "全面覆盖",
+        "description": "涵盖国内外各个领域的新闻资讯"
+      }
+    ],
+    "services_title": "新闻分类",
+    "services_subtitle": "全方位的新闻资讯服务",
+    "services": [
+      {
+        "name": "国内新闻",
+        "icon": "bi-house",
+        "description": "国内政治、经济、社会等各类新闻"
+      },
+      {
+        "name": "国际新闻", 
+        "icon": "bi-globe",
+        "description": "国际政治、经济、外交等新闻动态"
+      },
+      {
+        "name": "科技新闻",
+        "icon": "bi-cpu",
+        "description": "最新科技动态、互联网、人工智能等"
+      },
+      {
+        "name": "财经新闻",
+        "icon": "bi-graph-up",
+        "description": "股市、基金、房地产等财经资讯"
+      },
+      {
+        "name": "体育新闻",
+        "icon": "bi-trophy",
+        "description": "足球、篮球、奥运会等体育赛事"
+      },
+      {
+        "name": "娱乐新闻",
+        "icon": "bi-camera",
+        "description": "影视、音乐、明星等娱乐资讯"
+      }
+    ],
+    "contact_title": "联系我们",
+    "contact_subtitle": "新闻线索和意见反馈",
+    "contact": {
+      "address": "北京市朝阳区新闻大厦",
+      "phone": "010-12345678",
+      "email": "news@today.com",
+      "work_time": "24小时新闻热线",
+      "icp": "京ICP备20250000号",
+      "police": "京公网安备110105000000号"
+    },
+    "footer": {
+      "copyright": "© 2024 今日新闻. 保留所有权利。",
+      "description": "及时、准确、权威的新闻资讯"
+    }
+  }
+  

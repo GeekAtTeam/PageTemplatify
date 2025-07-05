@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 import os
 import sys
 import json
@@ -163,18 +164,27 @@ def main():
 
     # build 子命令
     parser_build = subparsers.add_parser('build', help='生成静态页面')
-    parser_build.add_argument('--config', '-c', required=True, help='JSON 配置文件路径')
-    parser_build.add_argument('--theme', '-t', default='default', help='主题名称，默认 default')
+    parser_build.add_argument('--theme', '-t', required=True, 
+                             choices=['enterprise', 'saas', 'ecommerce', 'blog', 'news'],
+                             help='主题名称')
+    parser_build.add_argument('--config', '-c', help='自定义配置文件路径（可选）')
     parser_build.set_defaults(func=build)
 
     # preview 子命令
     parser_preview = subparsers.add_parser('preview', help='本地预览 dist 目录，支持热更新')
-    parser_preview.add_argument('--config', '-c', required=True, help='JSON 配置文件路径')
-    parser_preview.add_argument('--theme', '-t', default='default', help='主题名称，默认 default')
+    parser_preview.add_argument('--theme', '-t', required=True,
+                               choices=['enterprise', 'saas', 'ecommerce', 'blog', 'news'],
+                               help='主题名称')
+    parser_preview.add_argument('--config', '-c', help='自定义配置文件路径（可选）')
     parser_preview.add_argument('--port', '-p', type=int, default=9469, help='预览服务端口，默认 9469')
     parser_preview.set_defaults(func=preview)
 
     args = parser.parse_args()
+    
+    # 如果没有指定 config，使用与 theme 同名的配置文件
+    if not args.config:
+        args.config = f"configs/{args.theme}.json"
+    
     args.func(args)
 
 if __name__ == '__main__':

@@ -1,0 +1,81 @@
+{
+    "site_name": "云智 SaaS 平台",
+    "hero_title": "云智 SaaS",
+    "hero_subtitle": "智能化 SaaS 解决方案",
+    "description": "为企业提供一站式 SaaS 服务，包括客户管理、数据分析、自动化营销等核心功能。",
+    "carousel_title": "产品功能展示",
+    "carousel": [
+      "carousel-1.webp",
+      "carousel-2.webp",
+      "carousel-3.webp"
+    ],
+    "about_title": "关于我们",
+    "about_subtitle": "专业的 SaaS 服务提供商",
+    "about_us": "云智 SaaS 平台致力于为企业提供智能化、个性化的 SaaS 解决方案。我们拥有丰富的行业经验和强大的技术团队，已服务超过 500+ 企业客户。",
+    "about_features": [
+      {
+        "icon": "bi-cloud-fill",
+        "title": "云端部署",
+        "description": "基于云原生架构，确保高可用性和可扩展性"
+      },
+      {
+        "icon": "bi-shield-lock-fill", 
+        "title": "数据安全",
+        "description": "企业级安全防护，保障客户数据安全"
+      },
+      {
+        "icon": "bi-graph-up-arrow",
+        "title": "智能分析",
+        "description": "AI 驱动的数据分析，提供深度洞察"
+      }
+    ],
+    "services_title": "核心功能",
+    "services_subtitle": "全方位的 SaaS 解决方案",
+    "services": [
+      {
+        "name": "客户管理",
+        "icon": "bi-people-fill",
+        "description": "完整的客户生命周期管理，提升客户满意度"
+      },
+      {
+        "name": "数据分析", 
+        "icon": "bi-graph-up",
+        "description": "实时数据分析，助力业务决策"
+      },
+      {
+        "name": "自动化营销",
+        "icon": "bi-megaphone-fill",
+        "description": "智能营销自动化，提高转化率"
+      },
+      {
+        "name": "工作流管理",
+        "icon": "bi-diagram-3-fill",
+        "description": "可视化工作流设计，提升团队协作效率"
+      },
+      {
+        "name": "API 集成",
+        "icon": "bi-code-slash",
+        "description": "丰富的 API 接口，支持第三方系统集成"
+      },
+      {
+        "name": "移动应用",
+        "icon": "bi-phone-fill",
+        "description": "原生移动应用，随时随地访问"
+      }
+    ],
+    "contact_title": "联系我们",
+    "contact_subtitle": "开始您的 SaaS 之旅",
+    "contact": {
+      "address": "深圳市南山区科技园",
+      "phone": "0755-12345678",
+      "email": "contact@cloudsaas.com",
+      "work_time": "7×24小时在线服务",
+      "icp": "粤ICP备20250000号",
+      "police": "粤公网安备110105000000号"
+    },
+    "footer": {
+      "copyright": "© 2024 云智 SaaS 平台. 保留所有权利。",
+      "description": "智能化 SaaS 解决方案，助力企业数字化转型"
+    }
+  }
+  

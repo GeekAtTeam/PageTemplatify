@@ -1,0 +1,81 @@
+{
+    "site_name": "优品商城",
+    "hero_title": "优品商城",
+    "hero_subtitle": "品质生活，从这里开始",
+    "description": "精选全球优质商品，提供正品保障、快速配送、无忧退换的一站式购物体验。",
+    "carousel_title": "热门商品展示",
+    "carousel": [
+      "carousel-1.webp",
+      "carousel-2.webp",
+      "carousel-3.webp"
+    ],
+    "about_title": "关于我们",
+    "about_subtitle": "值得信赖的电商平台",
+    "about_us": "优品商城成立于2020年，专注于为用户提供优质商品和卓越服务。我们严格把控商品质量，与众多知名品牌建立合作关系，致力于成为用户最信赖的购物平台。",
+    "about_features": [
+      {
+        "icon": "bi-award-fill",
+        "title": "正品保障",
+        "description": "所有商品均为正品，假一赔十"
+      },
+      {
+        "icon": "bi-truck", 
+        "title": "快速配送",
+        "description": "全国包邮，24小时内发货"
+      },
+      {
+        "icon": "bi-arrow-clockwise",
+        "title": "无忧退换",
+        "description": "7天无理由退换，售后无忧"
+      }
+    ],
+    "services_title": "服务特色",
+    "services_subtitle": "为您提供优质的购物体验",
+    "services": [
+      {
+        "name": "正品直供",
+        "icon": "bi-shield-check",
+        "description": "与品牌方直接合作，确保商品正品"
+      },
+      {
+        "name": "快速配送", 
+        "icon": "bi-truck",
+        "description": "全国物流网络，快速送达"
+      },
+      {
+        "name": "售后保障",
+        "icon": "bi-headset",
+        "description": "7×24小时客服，专业售后团队"
+      },
+      {
+        "name": "会员特权",
+        "icon": "bi-star-fill",
+        "description": "会员专享优惠，积分兑换好礼"
+      },
+      {
+        "name": "移动购物",
+        "icon": "bi-phone-fill",
+        "description": "手机APP购物，随时随地下单"
+      },
+      {
+        "name": "直播带货",
+        "icon": "bi-camera-video-fill",
+        "description": "专业主播推荐，直播购物体验"
+      }
+    ],
+    "contact_title": "联系我们",
+    "contact_subtitle": "随时为您提供帮助",
+    "contact": {
+      "address": "上海市浦东新区电商园区",
+      "phone": "400-123-4567",
+      "email": "service@youpin.com",
+      "work_time": "7×24小时客服热线",
+      "icp": "沪ICP备20250000号",
+      "police": "沪公网安备110105000000号"
+    },
+    "footer": {
+      "copyright": "© 2024 优品商城. 保留所有权利。",
+      "description": "品质生活，从这里开始"
+    }
+  }
+  
