@@ -14,7 +14,8 @@ import time
 import shutil
 import zipfile
 
-def build(args):
+def build_without_pack(args):
+    """生成页面但不打包"""
     # 获取脚本所在目录，确保路径正确
     root_dir = os.path.dirname(os.path.abspath(__file__))
     config_path = args.config
@@ -64,7 +65,6 @@ def build(args):
                 if os.path.exists(dst):
                     shutil.rmtree(dst)
                 shutil.copytree(src, dst)
-        print(f"✅ 已复制 public 资源到: {dist_dir}")
 
     output_path = os.path.join(dist_dir, f"index.html")
 
@@ -73,9 +73,20 @@ def build(args):
 
     print(f"✅ 页面生成成功: {output_path}")
 
+def build(args):
+    """生成页面并打包"""
+    # 先生成页面
+    build_without_pack(args)
+    
     # 打包 dist 目录为 zip 文件
+    root_dir = os.path.dirname(os.path.abspath(__file__))
+    dist_dir = os.path.join(root_dir, 'dist')
+    config_path = args.config
+    if not os.path.isabs(config_path):
+        config_path = os.path.join(root_dir, config_path)
+    
     config_name = os.path.splitext(os.path.basename(config_path))[0]
-    zip_filename = f"{config_name}-{theme_name}.zip"
+    zip_filename = f"pagetemplatify-{args.theme}.zip"
     zip_path = os.path.join(root_dir, zip_filename)
     
     with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
@@ -83,12 +94,11 @@ def build(args):
             for file in files:
                 file_path = os.path.join(root, file)
                 # 在 zip 中创建多一级目录结构
-                arcname = os.path.join(f"{config_name}-{theme_name}", os.path.relpath(file_path, dist_dir))
+                arcname = os.path.join(f"pagetemplatify-{args.theme}", os.path.relpath(file_path, dist_dir))
                 zipf.write(file_path, arcname)
     
     print(f"📦 打包完成: {zip_path}")
     print(f"💡 提示：可以使用 scp {zip_filename} user@server:/path/to/upload/ 上传到服务器")
-    print(f"📁 解压后会创建目录: {config_name}-{theme_name}/")
 
 class ReloadHandler(FileSystemEventHandler):
     def __init__(self, build_func, args):
@@ -121,9 +131,9 @@ def preview(args):
         print(f"错误：主题目录不存在: {theme_dir}")
         sys.exit(1)
     # 启动时先生成一次
-    build(args)
+    build_without_pack(args)
     # 启动文件监听
-    event_handler = ReloadHandler(build, args)
+    event_handler = ReloadHandler(build_without_pack, args)
     observer = Observer()
     observer.schedule(event_handler, path=os.path.dirname(config_path), recursive=False)
     observer.schedule(event_handler, path=theme_dir, recursive=True)
