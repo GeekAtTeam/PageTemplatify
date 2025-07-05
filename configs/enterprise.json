@@ -1,6 +1,6 @@
 {
-    "site_name": "广州极客艾特计算机系统有限公司",
-    "hero_title": "极客艾特 Geek@",
+    "site_name": "阿猫阿狗技术有限公司",
+    "hero_title": "🐱阿猫阿狗🐶",
     "hero_subtitle": "企业信息化解决方案专家",
     "description": "我们为客户提供一站式 IT 服务，包括服务器运维、项目开发、备案咨询、安全防护等。",
     "carousel_title": "我们的服务场景",
@@ -66,15 +66,15 @@
     "contact_title": "联系我们",
     "contact_subtitle": "随时为您提供专业服务",
     "contact": {
-      "address": "广州市小蛮腰科技园G栋101室",
-      "phone": "020-12345678",
-      "email": "contact@geekat.cn",
+      "address": "杭州市西湖科技园A栋",
+      "phone": "0571-12345678",
+      "email": "contact@amagou.com",
       "work_time": "周一至周五 9:00-18:00",
-      "icp": "粤ICP备20250000号",
-      "police": "粤公网安备110105000000号"
+      "icp": "浙ICP备20250000号",
+      "police": "浙公网安备110105000000号"
     },
     "footer": {
-      "copyright": "© 2024 广州极客艾特计算机系统有限公司. 保留所有权利。",
+      "copyright": "© 2025 阿猫阿狗技术有限公司 保留所有权利。",
       "description": "专注于企业信息化解决方案，助力企业数字化转型"
     }
   }
