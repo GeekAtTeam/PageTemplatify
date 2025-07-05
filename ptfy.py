@@ -11,6 +11,7 @@ from watchdog.events import FileSystemEventHandler
 import threading
 import time
 import shutil
+import zipfile
 
 def build(args):
     # 获取脚本所在目录，确保路径正确
@@ -70,6 +71,23 @@ def build(args):
         f.write(html)
 
     print(f"✅ 页面生成成功: {output_path}")
+
+    # 打包 dist 目录为 zip 文件
+    config_name = os.path.splitext(os.path.basename(config_path))[0]
+    zip_filename = f"{config_name}-{theme_name}.zip"
+    zip_path = os.path.join(root_dir, zip_filename)
+    
+    with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+        for root, dirs, files in os.walk(dist_dir):
+            for file in files:
+                file_path = os.path.join(root, file)
+                # 在 zip 中创建多一级目录结构
+                arcname = os.path.join(f"{config_name}-{theme_name}", os.path.relpath(file_path, dist_dir))
+                zipf.write(file_path, arcname)
+    
+    print(f"📦 打包完成: {zip_path}")
+    print(f"💡 提示：可以使用 scp {zip_filename} user@server:/path/to/upload/ 上传到服务器")
+    print(f"📁 解压后会创建目录: {config_name}-{theme_name}/")
 
 class ReloadHandler(FileSystemEventHandler):
     def __init__(self, build_func, args):
